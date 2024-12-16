@@ -14,6 +14,7 @@ const AUTHOR = process.env.AUTHOR || 'ꜱᴜᴩᴇʀɪᴏʀ';
 const SUDO = process.env.SUDO || '919497705819';
 const OWNER_NAME = process.env.OWNER_NAME || '𝘚𝘶𝘱𝘦𝘳𝘪𝘰𝘳-𝘟𝘰';
 const BOT_NAME = process.env.BOT_NAME || 'X-HUB-Bot';
+const MENU_URL = process.env.MENU_URL || 'https://i.imgur.com/Ye10pYy.jpeg';
 const WORK_TYPE = process.env.WORK_TYPE || 'public'
 const DATABASE_URL = process.env.DATABASE_URL || './assets/database.db';
 //const DATABASE_URL = DATABASE_URL
