@@ -7,13 +7,14 @@ const plugins = require("../lib/plugins.js");
 const {
 	OWNER_NAME,
 	BOT_NAME,
+	MENU_URL,
 	HANDLERS
 } = require("../config.js");
 const font = require("@viper-x/fancytext");
 const fs = require("fs");
 const more = String.fromCharCode(8206);
 const readMore = more.repeat(4001);
-let img = fs.readFileSync('./banner.png')
+/*let img = fs.readFileSync('./banner.png')*/
 cmd({
 		name: "menu",
 		category: "misc",
@@ -84,10 +85,23 @@ cmd({
 					});
 				});
 				//m.sendMsg(m.jid , img , { caption: font.tiny(menu) } , "image" )
-				m.send(font.tiny(menu))
-			}
-		} catch (e) {
-			console.log(`hey : ${e}`)
-		}
-	}
+				let sperky = { "key": { "participants":"0@s.whatsapp.net", "remoteJid": "status@broadcast", "fromMe": false, "id": "Hallo" }, "message": { "contactMessage": { "displayName": "X-HUB-BOT","vcard": `BEGIN:VCARD\nVERSION:3.0\nN:Sy;Bot;;;\nFN:y\nitem1.TEL;waid=${m.sender.split('@')[0]}:${m.sender.split('@')[0]}\nitem1.X-ABLabel:Ponsel\nEND:VCARD` }}, "participant": "0@s.whatsapp.net" }
+        return await client.sendMessage(m.jid , { text : font.tiny(menu),
+contextInfo: { externalAdReply: {                                           
+title: font.tiny(`𝘏𝘦𝘭𝘭𝘰𝘸  ${m.pushName}`),
+body: font.tiny(`𝘛𝘩𝘪𝘴 𝘪𝘴  ${BOT_NAME.split(";")[0]}`),
+sourceUrl: URL,
+mediaUrl: URL,
+mediaType: 1,
+showAdAttribution: true,
+renderLargerThumbnail: true,
+thumbnailUrl: `${MENU_URL.split(";")[2]}` }}},{ quoted: sperky })
+            // let text = align(txt, centerAlign);
+        /*return await client.sendMessage(m.jid , { text : `${menu}` , contextInfo: { externalAdReply: { title: font.tiny(`Hey there  ${m.pushName}`), sourceUrl: "ʜᴇᴍ", mediaUrl: "https://instagram.com/_viper.x0_", mediaType: 1, showAdAttribution: false, renderLargerThumbnail: true, thumbnailUrl: "https://i.imgur.io/3T1zSxj_d.webp?maxwidth=640&shape=thumb&fidelity=medium" }} }, {quoted: m })*/
+          m.send(m.jid , font.tiny(menu))
+        }
+      } catch (e) {
+        m.error(`hey : ${e}`)
+      }
+    }
 );
