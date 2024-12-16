@@ -23,9 +23,9 @@ cmd({
 		args
 	}) => {
 
-		if (!args) return await m.reply("_Enter Link!_");
+		if (!args) return await m.reply("> _Enter Link!_");
 		let dl = await client.sendMessage(m.jid, {
-			text: "_Downloading_"
+			text: "> _Downloading_"
 		}, {
 			quoted: m
 		})
@@ -42,7 +42,7 @@ cmd({
 			}
 		} catch (e) {
 			client.sendMessage(m.jid, {
-				text: `Error!`,
+				text: `> Error!`,
 				edit: dl.key
 			})
 		}
@@ -63,7 +63,7 @@ cmd({
 
 		if (!args) return await m.reply("_Enter Link!_");
 		let dl = await client.sendMessage(m.jid, {
-			text: "_Downloading_"
+			text: "> _Downloading_"
 		}, {
 			quoted: m
 		})
@@ -75,7 +75,7 @@ cmd({
 		for (let i = 1; i < response.data.length + 1; i++) {
 			datai += `${i} . ${i}/${response.data.length} - ${response.data[i-1].type}\n`
 		}
-		datai += '\n_Reply with Number_'
+		datai += '\n > _Reply with Number_'
 		m.sendMsg(m.jid, datai, {
 			edit: dl.key
 		})
@@ -107,21 +107,25 @@ cmd({
 					});
 				});
 			}
-			if (!args) return await m.reply("Enter Query,Number!");
+			if (!args) return await m.reply("> _Enter Query,Number!_");
+			let dl= await client.sendMessage(m.jid,{text: `> _Searching Images_`},{quoted: m})
 			let [query,
 				amount
 			] = args.split(",");
 			let result = await gimage(query, amount);
-			await m.reply(
-				`...`
-				//`Downloading ${amount || 1} images for ${query}`
-			);
+		await client.sendMessage(m.jid, {
+				text: `> _Downloading Images_`,
+				edit: dl.key
+			})
 			for (let i of result) {
 				await m.sendMsg(m.jid, i, {}, "image")
+				 }
+				let jd = await client.sendMessage(m.jid,{text: `> _Downloaded Images_`},{quoted: m})
+			await client.sendMessage(m.jid,{text: `> _Here Your Images_`,edit: jd.key})
+			}	catch (e) {
+			client.sendMessage(m.jid, {
+				text: `> _Error!_`,
+				edit: dl.key
+			})
 			}
-
-		} catch (e) {
-			console.log(e)
-		}
-	}
-);
+	})
