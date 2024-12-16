@@ -10,10 +10,10 @@ if (fs.existsSync('config.env')) {
 const HANDLERS =  process.env.HANDLER === undefined ? "^" : process.env.HANDLER;
 
 //const HANDLERS = process.env.HANDLER === 'false' || process.env.HANDLER === 'null' ? '^' : '^';
-const AUTHOR = process.env.AUTHOR || 'ᴠɪᴘᴇʀ-x';
-const SUDO = process.env.SUDO || '919656459062,27630425578,919207759062';
-const OWNER_NAME = process.env.OWNER_NAME || 'Viper-x0';
-const BOT_NAME = process.env.BOT_NAME || 'WhatsApp-Bot';
+const AUTHOR = process.env.AUTHOR || 'ꜱᴜᴩᴇʀɪᴏʀ';
+const SUDO = process.env.SUDO || '919497705819';
+const OWNER_NAME = process.env.OWNER_NAME || '𝘚𝘶𝘱𝘦𝘳𝘪𝘰𝘳-𝘟𝘰';
+const BOT_NAME = process.env.BOT_NAME || 'X-HUB-Bot';
 const WORK_TYPE = process.env.WORK_TYPE || 'public'
 const DATABASE_URL = process.env.DATABASE_URL || './assets/database.db';
 //const DATABASE_URL = DATABASE_URL
