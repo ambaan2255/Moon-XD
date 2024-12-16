@@ -56,7 +56,7 @@ cmd({
 						}, {
 							quoted: m
 						})
-						let response = await getJson(`https://viper.xasena.me/api/v1/yta?query=${query}`);
+						let response = await getJson(`https://viper.xasena.me/api/v1/insta?query=${query}`);
 						await client.sendMessage(m.jid, {
 							text: `Select Type\n\nTitle: ${response.data.title}\nUrl: ${response.data.url}\n\n1 .Audio\n2 .Video\n\nReply with Number`,
 							edit: mes.key
@@ -128,7 +128,7 @@ cmd({
 						});
 
 						try {
-							let response = await getJson(`https://viper.xasena.me/api/insta?url=${url}`);
+							let response = await getJson(`https://viper.xasena.me/api/v1/insta?query=${url}`);
 							m.sendMsg(m.jid, response.data[number - 1].url, {}, response.data[number - 1].type);
 						} catch (error) {
 							console.error("Error fetching data:", error);
