@@ -10,7 +10,7 @@ const readMore = more.repeat(4001);
 const {
 	getJson 
 } = require("../lib/functions.js");
-let noprob = `_Downloaded._`
+let noprob = `> _Downloaded._`
 cmd({
 		name: "insta",
 		fromMe: isPublic,
