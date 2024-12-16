@@ -29,7 +29,7 @@ cmd({
 		client,
 		args
 	}) => {
-		m.sendMsg(m.jid, `@${m.sender.split("@")[0]}`, {
+		m.sendMsg(m.jid, `> @${m.sender.split("@")[0]}`, {
 			mentions: [m.sender]
 		})
 	})
@@ -44,10 +44,9 @@ cmd({
 		m,
 		client
 	}) => {
-		return m.reply(`Runtime : ${await m.runtime()}`)
+		let run = await client.sendMessage(m.jid,{text: `> _Finding Time_`},{quoted: m})
+			await client.sendMessage(m.jid,{text: `> _Runtime : ${await m.runtime()}_`, edit: run.key})
 	});
-
-
 cmd({
 		name: "ping",
 		fromMe: isPublic,
@@ -62,14 +61,14 @@ cmd({
 		const start = new Date().getTime();
 
 		let pong = await client.sendMessage(m.jid, {
-			text: "..."
+			text: "> _Testing_"
 		}, {
 			quoted: m
 		})
 		const end = new Date().getTime();
 
 		await client.sendMessage(m.jid, {
-			text: `Latency : ${end - start} ms`,
+			text: `> _Speed : ${end - start} ms_`,
 			edit: pong.key
 		})
 	});
