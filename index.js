@@ -90,10 +90,8 @@ async function Bot() {
 			console.log("ᴘʟᴜɢɪɴs ʟᴏᴀᴅᴇᴅ");
 			console.log("\n======[  ☞︎︎︎  ʟᴏɢs  ☜︎︎︎   ]======\n");
 			let str = `\n _X-HUB STSRTED_ \n\n\n✰ VERSION    : ${require("./package.json").version } \n✰ PLUGINS   : ${require("./lib/plugins").commands.length}`;
-      client.sendMessage(client.user.id, {  text: str });
-    }
-  });
-			web()
+      client.sendMessage(client.user.id, {  text: str })
+	web()
 			
 		}
 
