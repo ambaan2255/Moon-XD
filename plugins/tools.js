@@ -77,40 +77,39 @@ cmd({
 
 cmd({
 		name: "find",
-		fromMe: isPublic,
-		category: "tools",
-		desc: "Finds music from replied Audio"
-	},
-	async ({
-		m,
-		client
-	}) => {
-		try {
-			if (!m.quoted || !(m.quoted.message.audioMessage || m.quoted.message.videoMessage)) {
-				return m.reply("Reply to Audio/Video Message!");
-			}
-			let mes = await client.sendMessage(m.jid, {
-				text: `...`
-			})
-			let buff = await m.quoted.download();
-			let result = await acr.identify(buff);
-			let {
-				title,
-				artists,
-				album,
-				genres,
-				release_date,
-				duration_ms,
-				external_metadata
-			} = result.metadata.music[0]
-			let rez = `Title : ${title}\n${album.name ? `Album : ${album.name}\n`: ''}${artists[0]?.name ? `Artists : ${artists[0]?.name.split('/').join(', ')}\n`: ''}${genres ? `Genre : ${genres?.map(genre => genre?.name).join(', ')}\n`: ''}${duration_ms ? `Duration : ${duration_ms / 1000 + 's'}\n`: ''}${release_date ? `Release Date : ${release_date}\n`: ''}${external_metadata.spotify ? `Spotify : https://open.spotify.com/track/${external_metadata.spotify?.track.id}\n`: ''}${external_metadata.youtube ? `Youtube : https://youtu.be/${external_metadata.youtube.vid}_\n`: ''}`
-			return await client.sendMessage(m.jid, {
-				text: rez,
-				edit: mes.key
-			})
-		} catch (e) {
-			return await client.sendMessage(m.jid, {
-				text: "Couldn't find a match !",
+	fromMe: isPublic,
+	category: "tools",
+	desc: "Finds music from replied Audio"
+},
+async ({
+	m,
+	client
+}) => {
+	try {
+		if (!m.quoted || !(m.quoted.message.audioMessage || m.quoted.message.videoMessage)) {
+			return m.reply("_Reply to Audio Or Video!_");
+		}
+		let mes = await client.sendMessage(m.jid, {
+			text: `_Finding Details_`
+		})
+		let buff = await m.quoted.download();
+		let result = await acr.identify(buff);
+		let {
+			title,
+			artists,
+			album,
+			genres,
+			release_date,
+			duration_ms,
+			external_metadata
+		} = result.metadata.music[0]
+		let rez = `> ➪ _Title_ : _${title}_ \n${album.name ? `> ➪ _Album_ : _${album.name}_ \n`: ''}${artists[0]?.name ? `> ➪ _Artists_ : _${artists[0]?.name.split('/').join(', ')}_ \n`: ''}${genres ? `> ➪ _Genre_ : _${genres?.map(genre => genre?.name).join(', ')}_ \n`: ''}${release_date ? `> ➪ _Release Date_ : _${release_date}_ \n`: ''}${external_metadata.spotify ? `> ➪ _Spotify_ : _https://open.spotify.com/track/${external_metadata.spotify?.track.id}_ \n`: ''}${external_metadata.youtube ? `> ➪ _Youtube_ : _https://youtu.be/${external_metadata.youtube.vid}_ \n`: ''}`
+		return await client.sendMessage(m.jid, {
+			text: rez,
+			edit: mes.key
+		})
+	} catch (e) {
+		return await client.sendMessage(m.jid,{text: "_Couldn't find a match!_",
 				edit: mes.key
 			});
 		}
