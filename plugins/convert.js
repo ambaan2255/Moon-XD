@@ -21,7 +21,7 @@ cmd({
 		args
 	}) => {
 		if (!m.quoted || !(m.quoted.message.imageMessage || m.quoted.message.videoMessage || m.quoted.message.stickerMessage))
-			return await m.reply("Reply to photo or video");
+			return await m.reply("> _Sorry this command not fixed_");
 		if (args) {
 			let [packname, author] = args.split(",");
 			let buff = await m.quoted.download();
@@ -53,7 +53,7 @@ cmd({
 		args
 	}) => {
 		if (!m.quoted || !(m.quoted.message.audioMessage || m.quoted.message.videoMessage))
-			return await m.reply("Reply to voice or video !");
+			return await m.reply("> _Reply to voice or video!_");
 		let buff = await toAudio(await m.quoted.download(), "mp4");
 		return m.sendMsg(m.jid, buff, {
 			mimetype: "audio/mpeg"
@@ -73,7 +73,7 @@ cmd({
 		args
 	}) => {
 		if (!args) {
-			m.reply('Enter Query!')
+			m.reply('> _Enter Query!_')
 		} else {
 			let [txt,
 				lang
