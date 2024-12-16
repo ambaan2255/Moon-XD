@@ -10,7 +10,7 @@ const readMore = more.repeat(4001);
 const {
 	getJson 
 } = require("../lib/functions.js");
-let noprob = `Downloading...`
+let noprob = `_Downloaded._`
 cmd({
 		name: "insta",
 		fromMe: isPublic,
@@ -23,14 +23,14 @@ cmd({
 		args
 	}) => {
 
-		if (!args) return await m.reply("Enter Link!");
+		if (!args) return await m.reply("_Enter Link!_");
 		let dl = await client.sendMessage(m.jid, {
-			text: "..."
+			text: "_Downloading_"
 		}, {
 			quoted: m
 		})
 		try {
-			let response = await getJson(`https://viper.devstackx.in/api/insta?url=${args}`);
+			let response = await getJson(`https://viper.xasena.me/api/v1/insta?query=${args}`);
 			await client.sendMessage(m.jid, {
 				text: `${noprob}`,
 				edit: dl.key
@@ -61,21 +61,21 @@ cmd({
 		args
 	}) => {
 
-		if (!args) return await m.reply("Enter Link!");
+		if (!args) return await m.reply("_Enter Link!_");
 		let dl = await client.sendMessage(m.jid, {
-			text: "..."
+			text: "_Downloading_"
 		}, {
 			quoted: m
 		})
 
 		let url = args
-		let response = await getJson(`https://viper.devstackx.in/api/insta?url=${args}`);
+		let response = await getJson(`https://viper.xasena.me/api/v1/insta?query=${args}`);
 		let data = response.data[0]
 		let datai = `Total Stories\nUrl : ${url}\n\n`
 		for (let i = 1; i < response.data.length + 1; i++) {
 			datai += `${i} . ${i}/${response.data.length} - ${response.data[i-1].type}\n`
 		}
-		datai += '\nReply with Number'
+		datai += '\n_Reply with Number_'
 		m.sendMsg(m.jid, datai, {
 			edit: dl.key
 		})
