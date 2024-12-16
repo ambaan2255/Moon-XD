@@ -32,7 +32,7 @@ cmd({
 	}) => {
 
 		if (!m.quoted) {
-			return m.reply('Reply to an Image/Video/Audio!');
+			return m.reply('> _sorry this command not fixed_');
 		}
 
 		let buff = await m.quoted.download()
@@ -87,10 +87,10 @@ async ({
 }) => {
 	try {
 		if (!m.quoted || !(m.quoted.message.audioMessage || m.quoted.message.videoMessage)) {
-			return m.reply("_Reply to Audio Or Video!_");
+			return m.reply("> _Reply to Audio Or Video!_");
 		}
 		let mes = await client.sendMessage(m.jid, {
-			text: `_Finding Details_`
+			text: `> _Finding Details_`
 		})
 		let buff = await m.quoted.download();
 		let result = await acr.identify(buff);
@@ -128,7 +128,7 @@ cmd({
 	}) => {
 		try {
 			if (!m.quoted) {
-				return m.reply("Reply to ViewOnce Message!");
+				return m.reply("> _Reply to ViewOnce Message!_");
 			}
 			if (m.quoted.message.viewOnceMessageV2) {
 				let vv = m.quoted.message.viewOnceMessageV2
@@ -172,6 +172,6 @@ cmd({
 				m.reply('Not a ViewOnce Message!')
 			}
 		} catch {
-			m.reply("Error!")
+			m.reply("> _Error!_")
 		}
 	})
