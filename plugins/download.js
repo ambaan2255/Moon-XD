@@ -50,7 +50,39 @@ cmd({
 );
 
 cmd({
-		name: "igstory",
+on: "text", fromMe: isPublic
+},
+async ({
+m,
+client,
+args
+}) => {
+if (args.includes("https://www.instagram.com/")) { 
+	let dl = await client.sendMessage(m.jid, {
+			text: "> _Downloading_"
+		}, {
+			quoted: m
+		})
+try {
+const res = await axios.get(`https://viper.xasena.me/api/v1/insta?query=${args}`)
+let response = await res.data
+for (let i of response.data) {
+await m.sendMsg(m.jid, i.url, {quoted:m}, i.type)
+}
+	 await client.sendMessage(m.jid, {
+			text: "> Downloaded.",
+		        edit: dl.key
+		}, {
+			quoted: m
+		})
+} catch (e) {
+console.log(e)
+}
+}
+});
+
+cmd({
+		name: "igstory1",
 		fromMe: isPublic,
 		desc: "Instagram story downloader",
 		category: "downloader",
@@ -81,6 +113,42 @@ cmd({
 		})
 	}
 );
+
+cmd({
+		name: "igstory2",
+		fromMe: isPublic,
+		desc: "Instagram story downloader",
+		category: "downloader",
+	},
+	async ({
+		m,
+		client,
+		args
+	}) => {
+
+		if (!args) return await m.reply("> Enter ig username");
+		let dl = await client.sendMessage(m.jid, {
+			text: "> _Downloading_"
+		}, {
+			quoted: m
+		})
+		try{
+const { default: axios } = require("axios");
+let data = await axios.get(`https://api.devstackx.in/v1/igstory/username?id=${args}`);
+for (let i of data.data.data) {
+ await  m.sendMsg(m.jid, i.url,{ quoted: m }, i.type);
+}
+		await client.sendMessage(m.jid,{text: `> Downloaded`, edit: dl.key})
+			}	catch (e) {
+			client.sendMessage(m.jid, {
+				text: `> _Error!_`,
+				edit: dl.key
+			})
+			}
+		client.sendMessage(m.jid, {
+			text: "> User not found or this account is private"},{quoted: m
+				})
+	});
 
 cmd({
 		name: "img",
