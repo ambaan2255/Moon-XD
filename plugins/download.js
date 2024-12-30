@@ -57,7 +57,7 @@ m,
 client,
 args
 }) => {
-if (args.includes("https://www.instagram.com/")) { 
+if (args.includes("https://www.instagram.com/reel/")) { 
 	let dl = await client.sendMessage(m.jid, {
 			text: "> _Downloading_"
 		}, {
