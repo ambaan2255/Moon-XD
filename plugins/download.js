@@ -140,12 +140,11 @@ for (let i of data.data.data) {
 }
 		await client.sendMessage(m.jid,{text: `> Downloaded`, edit: dl.key})
 			}	catch (e) {
-			client.sendMessage(m.jid, {
-				text: `> _Error!_`,
-				edit: dl.key
-			})
-		}	});
-
+			 client.sendMessage(m.jid, {
+				text: `> Error!`,
+				edit: dl.key})
+			}}
+    );
 cmd({
 		name: "img",
 		fromMe: isPublic,
