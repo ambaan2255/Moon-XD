@@ -144,11 +144,7 @@ for (let i of data.data.data) {
 				text: `> _Error!_`,
 				edit: dl.key
 			})
-			}
-		client.sendMessage(m.jid, {
-			text: "> User not found or this account is private"},{quoted: m
-				})
-	});
+		}	});
 
 cmd({
 		name: "img",
