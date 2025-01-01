@@ -19,6 +19,25 @@ cmd({
 	}) => {
 		m.reply(`${m.jid}`)
 	})
+cmd({
+	name: "alive",
+	fromMe: isPublic,
+	},
+		async ({
+			m,
+			client,
+			args
+		}) => {
+let img = "https://i.imgur.com/aP705tv.mp4"
+await client.sendMessage(m.jid,{audio: {url: img},mimetype: 'audio/mp4', ptt: true, contextInfo: { externalAdReply: {
+title: "X-HUB-BOT IS ALIVE",
+body: "ᴍᴀᴅᴇ ʙʏ ꜱᴜᴩᴇʀɪᴏʀ",
+sourceUrl: "https://www.instagram.com/4.4.4.4.4.4.4444",
+mediaUrl: "https://www.instagram.com/4.4.4.4.4.4.4444",
+mediaType: 1,
+showAdAttribution: true,
+renderLargerThumbnail: true,
+thumbnailUrl: " https://i.imgur.com/wW7FlFB.jpeg" }} },{quoted: m}) });
 
 cmd({
 		name: "mee",
@@ -72,23 +91,3 @@ cmd({
 			edit: pong.key
 		})
 	});
-cmd({
-	name: "alive",
-	fromMe: isPublic,
-	},
-		async ({
-			m,
-			client,
-			args
-		}) => {
-let img = "https://i.imgur.com/aP705tv.mp4"
-await client.sendMessage(m.jid,{audio: {url: img},mimetype: 'audio/mp4', ptt: true, contextInfo: { externalAdReply: {
-title: "X-HUB-BOT IS ALIVE",
-body: "ᴍᴀᴅᴇ ʙʏ ꜱᴜᴩᴇʀɪᴏʀ",
-sourceUrl: "https://www.instagram.com/4.4.4.4.4.4.4444",
-mediaUrl: "https://www.instagram.com/4.4.4.4.4.4.4444",
-mediaType: 1,
-showAdAttribution: true,
-renderLargerThumbnail: true,
-thumbnailUrl: " https://i.imgur.com/wW7FlFB.jpeg" }} },{quoted: m}) })
-
