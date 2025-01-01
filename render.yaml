@@ -7,14 +7,4 @@ services:
     dockerfilePath: Dockerfile
     plan: free
     autoDeploy: true
-    envVars:
-      - key: RENDER_APP_NAME
-        sync: false
-        required: true
-      - key: RENDER_API
-        sync: false
-        required: true
-      - key: DATABASE_URL
-        sync: false
-        required: true
         
