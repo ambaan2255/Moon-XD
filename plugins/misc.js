@@ -28,7 +28,7 @@ cmd({
 			client,
 			args
 		}) => {
-let img = "https://i.imgur.com/aP705tv.mp4"
+let img = "https://files.catbox.moe/hu1v4v.mp4"
 await client.sendMessage(m.jid,{audio: {url: img},mimetype: 'audio/mp4', ptt: true, contextInfo: { externalAdReply: {
 title: "X-HUB-BOT IS ALIVE",
 body: "ᴍᴀᴅᴇ ʙʏ ꜱᴜᴩᴇʀɪᴏʀ",
@@ -37,7 +37,7 @@ mediaUrl: "https://www.instagram.com/4.4.4.4.4.4.4444",
 mediaType: 1,
 showAdAttribution: true,
 renderLargerThumbnail: true,
-thumbnailUrl: " https://i.imgur.com/wW7FlFB.jpeg" }} },{quoted: m}) });
+thumbnailUrl: " https://files.catbox.moe/j9axvb.png" }} },{quoted: m}) });
 
 cmd({
 		name: "mee",
