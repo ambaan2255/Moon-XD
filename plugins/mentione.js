@@ -13,7 +13,7 @@ cmd({
         m, client, args
     })=> {
       //  if ( MENTIONE === "true" ? "false" : true && false ) {
-        let img = "https://cdn.ironman.my.id/q/SOLBC.mp4"
+        let img = "https://cdn.ironman.my.id/q/vBXgS.mp4"
         let SUDO = "919497705819,919961857267";
 if(SUDO.split(",").some((number) => args.includes(number))) {
               const Audios = await (await fetch(img)).buffer()
