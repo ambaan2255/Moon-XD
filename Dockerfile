@@ -1,5 +1,18 @@
-FROM quay.io/a-s-w-i-n-s-p-a-r-k-y/x-bot-md:latest
+FROM node:lts-buster
+
+RUN apt-get update && \
+  apt-get install -y \
+  ffmpeg \
+  imagemagick \
+  webp && \
+  apt-get upgrade -y && \
+  npm i pm2 -g && \
+  rm -rf /var/lib/apt/lists/*
+
 COPY package.json .
-RUN apk add --no-cache ffmpeg
+
+RUN yarn install
+
 COPY . .
-CMD npm start
+
+CMD ["npm", "start"]
