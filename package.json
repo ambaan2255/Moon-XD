@@ -1,10 +1,13 @@
 {
-  "name": "X-HUB-BOT",
-    "version": "1.0.1",
-    "description": "Hanna-Xo-Md Is Simple Multi Device Whatsapp Bot",
-    "main": "index.js",
-    "directories": {
-        "lib": "lib"
+  "name": "WhatsApp-Bot",
+  "version": "1.0.0",
+  "description": "WhatsApp Helper Bot",
+  "main": "index.js",
+  "scripts": {
+    "fcf": "supervisor -s index.js",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "pm2 start . --attach --name Wa",
+    "stop": "pm2 stop . --attach --name Wa"
   },
   "repository": {
     "type": "git",
