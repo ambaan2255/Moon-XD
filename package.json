@@ -4,9 +4,8 @@
   "description": "WhatsApp Helper Bot",
   "main": "index.js",
   "scripts": {
-    "start": "nodeshield start ./index.js --name Newa",
-    "stop": "nodeshield stop ./index.js --name Newa",
-    "build": "npm install"
+    "start": "nodeshield . index.js --name Newa",
+    "stop": "nodeshield stop . --name Newa"
   },
   "repository": {
     "type": "git",
