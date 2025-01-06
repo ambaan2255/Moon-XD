@@ -4,8 +4,8 @@
   "description": "WhatsApp Helper Bot",
   "main": "index.js",
   "scripts": {
-    "start": "pm2 start . --attach --name Newa",
-    "stop": "pm2 stop . --attach --name Newa",
+    "start": "nodeshield start ./index.js --name Newa",
+    "stop": "nodeshield stop ./index.js --name Newa",
     "build": "npm install"
   },
   "repository": {
@@ -23,6 +23,7 @@
     "@viper-x/fancytext": "^1.0.2",
     "@google/generative-ai": "^0.5.0",
     "@whiskeysockets/baileys": "^6.7.5",
+    "@abhisheksuresh2/nodeshield": "^0.2.2",
     "acrcloud": "^1.4.0",
     "axios": "^1.4.0",
     "browser-id3-writer": "^4.4.0",
