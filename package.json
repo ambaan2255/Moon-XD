@@ -1,12 +1,10 @@
 {
-  "name": "WhatsApp-Bot",
-  "version": "1.0.0",
-  "description": "WhatsApp Helper Bot",
-  "main": "index.js",
-  "scripts": {
-    "start": "nodeshield ./index.js --name Newa",
-    "stop": "nodeshield stop Newa",
-   "build": "npm install"
+  "name": "X-HUB-BOT",
+    "version": "1.0.1",
+    "description": "Hanna-Xo-Md Is Simple Multi Device Whatsapp Bot",
+    "main": "index.js",
+    "directories": {
+        "lib": "lib"
   },
   "repository": {
     "type": "git",
