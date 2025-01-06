@@ -83,7 +83,7 @@ cmd({
 
 
 cmd({
-		name: "song",
+		name: "ringtone",
 		fromMe: isPublic,
 		category: "downloader",
 		desc: "To download song"
@@ -100,7 +100,7 @@ cmd({
 		}, {
 			quoted: m
 		})
-		let response = await getJson(`https://viper.xasena.me/api/v1/yta?query=${args}`);
+		let response = await getJson(`https://abhi-api-wphp.onrender.com/api/search/ringtone?text=${args}`);
 		let coverBuffer = await getBuffer(response.data.thumbnail);
 		client.sendMessage(m.jid, {
 			text: `Downloading : ${response.data.title}`,
