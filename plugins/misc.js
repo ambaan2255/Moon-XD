@@ -30,7 +30,7 @@ cmd({
 		}) => {
 let img = "https://files.catbox.moe/hu1v4v.mp4"
 await client.sendMessage(m.jid,{audio: {url: img},mimetype: 'audio/mp4', ptt: true, contextInfo: { externalAdReply: {
-title: "X-HUB-BOT IS ALIVE",
+title: "DEVU-MWOL-BOT IS ALIVE",
 body: "ᴍᴀᴅᴇ ʙʏ ꜱᴜᴩᴇʀɪᴏʀ",
 sourceUrl: "https://www.instagram.com/4.4.4.4.4.4.4444",
 mediaUrl: "https://www.instagram.com/4.4.4.4.4.4.4444",
