@@ -23,8 +23,8 @@ if(SUDO.split(",").some((number) => args.includes(number))) {
 await client.sendMessage(m.jid,{audio: Audios,mimetype: 'audio/mp4', ptt: false,
 contextInfo: 
 { externalAdReply: {
-title: "HY SUPERIOR IS HERE",
-body: "ᴇɴᴛʜɪɴᴀ ᴍᴡᴏɴᴇ ᴍᴇɴᴛɪᴏɴ ᴄʜᴇʏᴛʜᴇ",
+title: "SUPERIOR IS HERE",
+body: "ʜʏ ʙʀᴏ!",
 sourceUrl: "https://www.instagram.com/4.4.4.4.4.4.4444",
 mediaUrl: "https://www.instagram.com/4.4.4.4.4.4.4444",
 mediaType: 1,
