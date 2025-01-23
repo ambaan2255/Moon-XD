@@ -86,7 +86,11 @@ cmd({
 				});
 				//m.sendMsg(m.jid , img , { caption: font.tiny(menu) } , "image" )
 				let sperky = { "key": { "participants":"0@s.whatsapp.net", "remoteJid": "status@broadcast", "fromMe": false, "id": "Hallo" }, "message": { "contactMessage": { "displayName": "X-HUB-BOT","vcard": `BEGIN:VCARD\nVERSION:3.0\nN:Sy;Bot;;;\nFN:y\nitem1.TEL;waid=${m.sender.split('@')[0]}:${m.sender.split('@')[0]}\nitem1.X-ABLabel:Ponsel\nEND:VCARD` }}, "participant": "0@s.whatsapp.net" }
-        return await client.sendMessage(m.jid , { text : font.tiny(menu),
+        return await client.sendMessage(m.jid ,{document: { url: 'https://i.ibb.co/2W0H9Jq/avatar-contact.png'
+				}, text : font.tiny(menu),	mimetype: 'application/zip',
+         fileName: BOT_INFO.split(";")[0],
+         fileLength: "99999999999",
+
 contextInfo: { externalAdReply: {                                           
 title: font.tiny(`𝘏𝘦𝘭𝘭𝘰𝘸  ${m.pushName}`),
 body: font.tiny(`𝘛𝘩𝘪𝘴 𝘪𝘴  ${BOT_NAME}`),
