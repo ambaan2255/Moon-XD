@@ -96,7 +96,7 @@ title: font.tiny(`𝘏𝘦𝘭𝘭𝘰𝘸  ${m.pushName}`),
 body: font.tiny(`𝘛𝘩𝘪𝘴 𝘪𝘴  ${BOT_NAME}`),
 sourceUrl: URL,
 mediaUrl: URL,
-mediaType: 1,
+mediaType: 2,
 showAdAttribution: true,
 renderLargerThumbnail: true,
 thumbnailUrl: `${MENU_URL}` }}},{ quoted: sperky })
