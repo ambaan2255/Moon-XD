@@ -12,6 +12,9 @@ const {
 const {whatsappAutomation, callAutomation} = require('./lib/statusView.js');
 const P = require('pino');
 const { serialize } = require('./lib/serialize.js');
+const {
+	commands
+} = require("../lib/plugins.js");
 const path = require('path');
 const web = require('./server')
 const fs = require('fs');
