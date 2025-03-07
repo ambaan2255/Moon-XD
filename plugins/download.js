@@ -10,7 +10,7 @@ const readMore = more.repeat(4001);
 const {
 	getJson 
 } = require("../lib/functions.js");
-let noprob = `> _Downloaded._`
+let noprob = `ᴅᴏᴡɴʟᴏᴀᴅᴇᴅ.`
 cmd({
 		name: "insta",
 		fromMe: isPublic,
@@ -23,9 +23,9 @@ cmd({
 		args
 	}) => {
 
-		if (!args) return await m.reply("> _Enter Link!_");
+		if (!args) return await m.reply("ᴇɴᴛᴇʀ ʟɪɴᴋ");
 		let dl = await client.sendMessage(m.jid, {
-			text: "> _Downloading_"
+			text: "ᴅᴏᴡɴʟᴏᴀᴅɪɴɢ.."
 		}, {
 			quoted: m
 		})
@@ -42,7 +42,7 @@ cmd({
 			}
 		} catch (e) {
 			client.sendMessage(m.jid, {
-				text: `> Error!`,
+				text: `ᴇʀʀᴏʀ!`,
 				edit: dl.key
 			})
 		}
@@ -59,7 +59,7 @@ args
 }) => {
 if (args.includes("https://www.instagram.com/reel/")) { 
 	let dl = await client.sendMessage(m.jid, {
-			text: "> _Downloading_"
+			text: "ᴅᴏᴡɴʟᴏᴀᴅɪɴɢ.."
 		}, {
 			quoted: m
 		})
@@ -70,7 +70,7 @@ for (let i of response.data) {
 await m.sendMsg(m.jid, i.url, {quoted:m}, i.type)
 }
 	 await client.sendMessage(m.jid, {
-			text: "> Downloaded.",
+			text: "ᴅᴏᴡɴʟᴏᴀᴅᴇᴅ.",
 		        edit: dl.key
 		}, {
 			quoted: m
@@ -93,9 +93,9 @@ cmd({
 		args
 	}) => {
 
-		if (!args) return await m.reply("_Enter Link!_");
+		if (!args) return await m.reply("ᴇɴᴛᴇʀ ʟɪɴᴋ");
 		let dl = await client.sendMessage(m.jid, {
-			text: "> _Downloading_"
+			text: "ᴅᴏᴡɴʟᴏᴀᴅɪɴɢ.."
 		}, {
 			quoted: m
 		})
@@ -107,7 +107,7 @@ cmd({
 		for (let i = 1; i < response.data.length + 1; i++) {
 			datai += `${i} . ${i}/${response.data.length} - ${response.data[i-1].type}\n`
 		}
-		datai += '\n > _Reply with Number_'
+		datai += '\n ʀᴇᴩʟᴀʏ ᴀ ɴᴜᴍᴇʀ'
 		m.sendMsg(m.jid, datai, {
 			edit: dl.key
 		})
@@ -124,11 +124,11 @@ cmd({
 		m,
 		client,
 		args
-	}) => {
+E> {
 
-		if (!args) return await m.reply("> Enter ig username");
+		if (!args) return await m.reply("ᴇɴᴛᴇʀ ᴜꜱᴇʀ ɴᴀᴍᴇ");
 		let dl = await client.sendMessage(m.jid, {
-			text: "> _Downloading_"
+			text: "ᴅᴏᴡɴʟᴏᴀᴅɪɴɢ"
 		}, {
 			quoted: m
 		})
@@ -138,10 +138,10 @@ let data = await axios.get(`https://api.devstackx.in/v1/igstory/username?id=${ar
 for (let i of data.data.data) {
  await  m.sendMsg(m.jid, i.url,{ quoted: m }, i.type);
 }
-		await client.sendMessage(m.jid,{text: `> Downloaded`, edit: dl.key})
+		await client.sendMessage(m.jid,{text: `ᴅᴏᴡɴʟᴏᴀᴅɪɴɢ`, edit: dl.key})
 			}	catch (e) {
 			 client.sendMessage(m.jid, {
-				text: `> Error!`,
+				text: `ᴇʀʀᴏʀ!`,
 				edit: dl.key})
 			}}
     );
@@ -170,24 +170,24 @@ cmd({
 					});
 				});
 			}
-			if (!args) return await m.reply("> _Enter Query,Number!_");
-			let dl= await client.sendMessage(m.jid,{text: `> _Searching Images_`},{quoted: m})
+			if (!args) return await m.reply("ᴇɴᴛᴇʀ ɴᴀᴍᴇ,ɴᴜᴍʙᴇʀ!");
+			let dl= await client.sendMessage(m.jid,{text: `ꜱᴇᴀʀᴄʜɪɴɢ ɪᴍᴀɢᴇꜱ`},{quoted: m})
 			let [query,
 				amount
 			] = args.split(",");
 			let result = await gimage(query, amount);
 		await client.sendMessage(m.jid, {
-				text: `> _Downloading Images_`,
+				text: `ᴅᴏᴡɴʟᴏᴀᴅɪɴɢ`,
 				edit: dl.key
 			})
 			for (let i of result) {
 				await m.sendMsg(m.jid, i, {}, "image")
 				 }
-				let jd = await client.sendMessage(m.jid,{text: `> _Downloaded Images_`},{quoted: m})
-			await client.sendMessage(m.jid,{text: `> _Here Your Images_`,edit: jd.key})
+				let jd = await client.sendMessage(m.jid,{text: `ᴅᴏᴡɴʟᴏᴀᴅᴇᴅ.`},{quoted: m})
+			await client.sendMessage(m.jid,{text: `ʜᴇʀᴇ ʏᴏᴜʀ ɪᴍᴀɢᴇꜱ`,edit: jd.key})
 			}	catch (e) {
 			client.sendMessage(m.jid, {
-				text: `> _Error!_`,
+				text: `ᴇʀʀᴏʀ`,
 				edit: dl.key
 			})
 			}
