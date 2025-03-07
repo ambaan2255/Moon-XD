@@ -30,7 +30,7 @@ cmd({
 			quoted: m
 		})
 		try {
-			let response = await getJson(`https://viper.xasena.me/api/v1/insta?query=${args}`);
+			let response = await getJson(`https://viper.devstackx.in/api/v1/insta?query=${args}`);
 			await client.sendMessage(m.jid, {
 				text: `${noprob}`,
 				edit: dl.key
@@ -64,7 +64,7 @@ if (args.includes("https://www.instagram.com/reel/")) {
 			quoted: m
 		})
 try {
-const res = await axios.get(`https://viper.xasena.me/api/v1/insta?query=${args}`)
+const res = await axios.get(`https://viper.devstackx.in/api/v1/insta?query=${args}`)
 let response = await res.data
 for (let i of response.data) {
 await m.sendMsg(m.jid, i.url, {quoted:m}, i.type)
@@ -101,7 +101,7 @@ cmd({
 		})
 
 		let url = args
-		let response = await getJson(`https://viper.xasena.me/api/v1/insta?query=${args}`);
+		let response = await getJson(`https://viper.devstackx.in/api/v1/insta?query=${args}`);
 		let data = response.data[0]
 		let datai = `Total Stories\nUrl : ${url}\n\n`
 		for (let i = 1; i < response.data.length + 1; i++) {
