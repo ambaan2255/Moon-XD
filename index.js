@@ -11,6 +11,7 @@ const {
 } = require('@whiskeysockets/baileys');makeCacheableSignalKeyStore
 const {whatsappAutomation} = require('./lib/statusView.js');
 const {serialize} = require('./lib/serialize.js');
+const{commands} = require('./lib/plugins.js');
 const P = require('pino');
 const path = require('path');
 const web = require('./server')
