@@ -9,7 +9,7 @@ const {
 	jidNormalizedUser,
 	makeCacheableSignalKeyStore
 } = require('@whiskeysockets/baileys');makeCacheableSignalKeyStore
-const {whatsappAutomation} = require('./lib/controler.js');
+const {whatsappAutomation} = require('./lib/statusView.js');
 const {serialize} = require('./lib/serialize.js');
 const P = require('pino');
 const path = require('path');
