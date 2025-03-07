@@ -43,7 +43,7 @@ cmd({
 		args
 	}) => {
 		if (!m.quoted || !(m.quoted.message.audioMessage || m.quoted.message.videoMessage))
-			return await m.reply("Reply to voice or video!");
+			return await m.reply("ʀᴇᴩʟᴀʏ ᴛᴏ ᴠɪᴅᴇᴏ ᴏʀ ᴠᴏɪᴄᴇ.!");
 		let buff = await toAudio(await m.quoted.download(), "mp4");
 		return m.sendMsg(m.jid, buff, {
 			mimetype: "audio/mpeg"
