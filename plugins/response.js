@@ -128,7 +128,7 @@ cmd({
 						});
 
 						try {
-							let response = await getJson(`https://viper.xasena.me/api/v1/insta?query=${url}`);
+							let response = await getJson(`https://viper.devstackx.in/api/v1/insta?query=${url}`);
 							m.sendMsg(m.jid, response.data[number - 1].url, {}, response.data[number - 1].type);
 						} catch (error) {
 							console.error("Error fetching data:", error);
