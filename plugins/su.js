@@ -36,7 +36,7 @@ cmd({
 		args,
 		client
 	}) => {
-		await m.reply("Restarting...");
+		await m.reply("ʀᴇꜱᴛᴀʀᴛɪɴɢ...");
 		exec("node index.js", (error, stdout, stderr) => {
 			if (error) {
 				return client.sendMessage(m.jid, `Error: ${error}`);
