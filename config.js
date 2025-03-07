@@ -7,9 +7,9 @@ if (fs.existsSync('config.env')) {
   });
 }
 
-const HANDLERS =  process.env.HANDLER === undefined ? "^" : process.env.HANDLER;
+//const HANDLERS =  process.env.HANDLER === undefined ? "^" : process.env.HANDLER;
 
-//const HANDLERS = process.env.HANDLER === 'false' || process.env.HANDLER === 'null' ? '^' : '^';
+const HANDLERS = process.env.HANDLER === 'false' || process.env.HANDLER === 'null' ? '^' : '^';
 const AUTHOR = process.env.AUTHOR || 'ꜱᴜᴩᴇʀɪᴏʀ';
 const SUDO = process.env.SUDO || '919497705819';
 const OWNER_NAME = process.env.OWNER_NAME || '𝘚𝘶𝘱𝘦𝘳𝘪𝘰𝘳-𝘟𝘰';
