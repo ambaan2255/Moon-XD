@@ -123,8 +123,7 @@ cmd({
 	async ({
 		m,
 		client,
-		args
- {
+		args }) => {
 
 		if (!args) return await m.reply("ᴇɴᴛᴇʀ ᴜꜱᴇʀ ɴᴀᴍᴇ");
 		let dl = await client.sendMessage(m.jid, {
