@@ -20,7 +20,7 @@ cmd({
 			return m.reply("Reply to an Image!");
 		let media = await m.quoted.download();
 		await updateProfilePicture(m.user, media, client);
-		return await m.reply("Profile Picture Updated ✓");
+		return await m.reply("ᴩʀᴏꜰɪʟᴇ ᴩɪᴄᴛᴜʀᴇ ᴜᴩᴅᴀᴛᴇᴅ ✓");
 	} catch (e) {
 		console.log(e)
 	}
