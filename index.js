@@ -8,13 +8,10 @@ const {
 	makeInMemoryStore,
 	jidNormalizedUser,
 	makeCacheableSignalKeyStore
-} = require('@whiskeysockets/baileys');
-const {whatsappAutomation, callAutomation} = require('./lib/statusView.js');
+} = require('@whiskeysockets/baileys');makeCacheableSignalKeyStore
+const {whatsappAutomation} = require('./lib/controler.js');
+const {serialize} = require('./lib/serialize.js');
 const P = require('pino');
-const { serialize } = require('./lib/serialize.js');
-const {
-	commands
-} = require("../lib/plugins.js");
 const path = require('path');
 const web = require('./server')
 const fs = require('fs');
@@ -115,48 +112,11 @@ async function Bot() {
 
 	})
 
-	client.ev.on('messages.upsert', async (msg) => {
-	let m;
-	
-	try {
-		m = await serialize(JSON.parse(JSON.stringify(msg.messages[0])), client);
-	} catch (error) {
-		console.error("Error serializing message:", error);
-		return;
-	}
-	
-	await whatsappAutomation(client, m, msg);
-	
-	if(config.DISABLE_PM && !m.isGroup) {
-		return;
-	}
-	
-	commands.map(async (Sparky) => {
-		if (Sparky.fromMe && !m.sudo) return;
-		let comman = m.text ? m.body[0].toLowerCase() + m.body.slice(1).trim() : "";
-		let args;
-		try {
-			if (Sparky.on) {
-				Sparky.function({m, args: m.body, client});
-			} else if (Sparky.name && Sparky.name.test(comman)) {
-				args = m.body.replace(Sparky.name, '$1').trim();
-				Sparky.function({m, args, client});
-			}
-		} catch (error) {
-			console.log(error);
-		}
-	});
-});
-
-    //////////////////////////////////////
-
 
 	/////////////////////////////////////////////
 
 	client.ev.on("creds.update",
 		saveCreds);
-
-	
 
 	/////////////////////////////////////////////
 	/*
@@ -193,7 +153,6 @@ async function Bot() {
 
 	/////////////////////////////////////////////
 }
-
 
 Bot()
 
