@@ -124,7 +124,7 @@ cmd({
 		m,
 		client,
 		args
-E> {
+ {
 
 		if (!args) return await m.reply("ᴇɴᴛᴇʀ ᴜꜱᴇʀ ɴᴀᴍᴇ");
 		let dl = await client.sendMessage(m.jid, {
