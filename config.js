@@ -14,6 +14,9 @@ const AUTHOR = process.env.AUTHOR || 'ꜱᴜᴩᴇʀɪᴏʀ';
 const SUDO = process.env.SUDO || '919497705819';
 const OWNER_NAME = process.env.OWNER_NAME || '𝘚𝘶𝘱𝘦𝘳𝘪𝘰𝘳-𝘟𝘰';
 const BOT_NAME = process.env.BOT_NAME || 'X-HUB-Bot';
+const AUTO_STATUS_VIEW = process.env.AUTO_STATUS_VIEW || 'true';
+const STATUS_REACTION = process.env.STATUS_REACTION || 'true';
+const STATUS_REACTION_EMOJI = process.env.STATUS_REACTION_EMOJI || '🍉,🍓,🎀,💀,💗,📍,🔪,🛒,☠️,🐍,👍🏻';
 const MENU_URL = process.env.MENU_URL || 'https://i.imgur.com/bKVHPEE.jpeg';
 const WORK_TYPE = process.env.WORK_TYPE || 'public'
 const DATABASE_URL = process.env.DATABASE_URL || './assets/database.db';
@@ -40,6 +43,9 @@ module.exports = {
   AUTHOR,
   SUDO,
   OWNER_NAME,
+  AUTO_STATUS_VIEW,
+  STATUS_REACTION,
+  STATUS_REACTION_EMOJI,
   BOT_NAME,
   WORK_TYPE,
   DATABASE
