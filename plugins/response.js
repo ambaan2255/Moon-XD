@@ -56,7 +56,7 @@ cmd({
 						}, {
 							quoted: m
 						})
-						let response = await getJson(`https://viper.xasena.me/api/v1/insta?query=${query}`);
+						let response = await getJson(`https://viper.devstackx.in/api/v1/insta?query=${query}`);
 						await client.sendMessage(m.jid, {
 							text: `Select Type\n\nTitle: ${response.data.title}\nUrl: ${response.data.url}\n\n1 .Audio\n2 .Video\n\nReply with Number`,
 							edit: mes.key
