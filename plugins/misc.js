@@ -64,7 +64,7 @@ cmd({
 		client
 	}) => {
 		let run = await client.sendMessage(m.jid,{text: `ꜰɪɴᴅɪɴɢ ᴛɪᴍᴇ.`},{quoted: m})
-			await client.sendMessage(m.jid,{text: `ʀᴜɴᴛɪᴍᴇ : ${await m.runtime()}_`, edit: run.key})
+			await client.sendMessage(m.jid,{text: `ʀᴜɴᴛɪᴍᴇ : ${await m.runtime()}`, edit: run.key})
 	});
 cmd({
 		name: "ping",
