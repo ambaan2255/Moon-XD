@@ -153,6 +153,40 @@ async function Bot() {
 	/////////////////////////////////////////////
 }
 
+client.ev.on('messages.upsert', async (msg) => {
+	let m;
+	
+	try {
+		m = await serialize(JSON.parse(JSON.stringify(msg.messages[0])), client);
+	} catch (error) {
+		console.error("Error serializing message:", error);
+		return;
+	}
+	
+	await whatsappAutomation(client, m, msg);
+	
+	if(config.DISABLE_PM && !m.isGroup) {
+		return;
+	}
+	
+	commands.map(async (Sparky) => {
+		if (Sparky.fromMe && !m.sudo) return;
+		let comman = m.text ? m.body[0].toLowerCase() + m.body.slice(1).trim() : "";
+		let args;
+		try {
+			if (Sparky.on) {
+				Sparky.function({m, args: m.body, client});
+			} else if (Sparky.name && Sparky.name.test(comman)) {
+				args = m.body.replace(Sparky.name, '$1').trim();
+				Sparky.function({m, args, client});
+			}
+		} catch (error) {
+			console.log(error);
+		}
+	});
+});
+    //////////////////////////////////////
+
 Bot()
 
 process.on('uncaughtException', function(err) {
