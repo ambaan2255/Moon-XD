@@ -13,7 +13,7 @@ cmd({
 		name: "sticker",
 		fromMe: isPublic,
 		category: "converter",
-		desc: lang.STICKER_DESC
+		desc: "convert photo to sticker",
 	},
 	async ({
 		m,
