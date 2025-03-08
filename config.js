@@ -18,7 +18,7 @@ const AUTO_STATUS_VIEW = process.env.AUTO_STATUS_VIEW || 'true';
 const STATUS_REACTION = process.env.STATUS_REACTION || 'true';
 const STATUS_REACTION_EMOJI = process.env.STATUS_REACTION_EMOJI || '🍉,🍓,🎀,💀,💗,📍,🔪,🛒,☠️,🐍,👍🏻';
 const MENU_URL = process.env.MENU_URL || 'https://i.imgur.com/bKVHPEE.jpeg';
-const WORK_TYPE = process.env.WORK_TYPE || 'public'
+const WORK_TYPE = process.env.WORK_TYPE || 'private'
 const DATABASE_URL = process.env.DATABASE_URL || './assets/database.db';
 //const DATABASE_URL = DATABASE_URL
 const DATABASE = DATABASE_URL === './assets/database.db'
