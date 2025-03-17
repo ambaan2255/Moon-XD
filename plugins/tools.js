@@ -32,7 +32,7 @@ cmd({
 	}) => {
 
 		if (!m.quoted) {
-			return m.reply('> _sorry this command not fixed_');
+			return m.reply('ᴇʀʀᴏʀ');
 		}
 
 		let buff = await m.quoted.download()
@@ -87,10 +87,10 @@ async ({
 }) => {
 	try {
 		if (!m.quoted || !(m.quoted.message.audioMessage || m.quoted.message.videoMessage)) {
-			return m.reply("> _Reply to Audio Or Video!_");
+			return m.reply("ʀᴇᴩʟʏ ᴀᴜᴅɪᴏ ᴏʀ ᴠɪᴅᴇᴏ");
 		}
 		let mes = await client.sendMessage(m.jid, {
-			text: `> _Finding Details_`
+			text: `ꜰɪɴᴅɪɴɢ....`
 		})
 		let buff = await m.quoted.download();
 		let result = await acr.identify(buff);
@@ -103,7 +103,7 @@ async ({
 			duration_ms,
 			external_metadata
 		} = result.metadata.music[0]
-		let rez = `> ➪ _Title_ : _${title}_ \n${album.name ? `> ➪ _Album_ : _${album.name}_ \n`: ''}${artists[0]?.name ? `> ➪ _Artists_ : _${artists[0]?.name.split('/').join(', ')}_ \n`: ''}${genres ? `> ➪ _Genre_ : _${genres?.map(genre => genre?.name).join(', ')}_ \n`: ''}${release_date ? `> ➪ _Release Date_ : _${release_date}_ \n`: ''}${external_metadata.spotify ? `> ➪ _Spotify_ : _https://open.spotify.com/track/${external_metadata.spotify?.track.id}_ \n`: ''}${external_metadata.youtube ? `> ➪ _Youtube_ : _https://youtu.be/${external_metadata.youtube.vid}_ \n`: ''}`
+		let rez = ` ➪ ᴛɪᴛʟᴇ : ${title} \n${album.name ? ` ➪ ᴀʟʙᴜᴍ : ${album.name} \n`: ''}${artists[0]?.name ? ` ➪ ᴀʀᴛɪꜱᴛ : ${artists[0]?.name.split('/').join(', ')} \n`: ''}${genres ? ` ➪ ɢᴇɴʀᴇ : ${genres?.map(genre => genre?.name).join(', ')} \n`: ''}${release_date ? ` ➪ ʀᴇʟᴇᴀꜱᴇ ᴅᴀᴛᴇ : ${release_date} \n`: ''}${external_metadata.spotify ? ` ➪ ꜱᴏᴏᴛɪꜰʏ : https://open.spotify.com/track/${external_metadata.spotify?.track.id} \n`: ''}${external_metadata.youtube ? ` ➪ ʏᴏᴜᴛᴜʙᴇ : https://youtu.be/${external_metadata.youtube.vid} \n`: ''}`
 		return await client.sendMessage(m.jid, {
 			text: rez,
 			edit: mes.key
@@ -172,6 +172,6 @@ cmd({
 				m.reply('Not a ViewOnce Message!')
 			}
 		} catch {
-			m.reply("> _Error!_")
+			m.reply("_Error!_")
 		}
 	})
