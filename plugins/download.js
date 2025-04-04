@@ -49,7 +49,7 @@ cmd({
 	}
 );
 
-cmd({
+/*cmd({
 on: "text", fromMe: isPublic
 },
 async ({
@@ -79,10 +79,10 @@ await m.sendMsg(m.jid, i.url, {quoted:m}, i.type)
 console.log(e)
 }
 }
-});
+});*/
 
 cmd({
-		name: "igstory1",
+		name: "igstory",
 		fromMe: isPublic,
 		desc: "Instagram story downloader",
 		category: "downloader",
@@ -133,7 +133,7 @@ cmd({
 		})
 		try{
 const { default: axios } = require("axios");
-let data = await axios.get(`https://api.devstackx.in/v1/igstory/username?id=${args}`);
+let data = await axios.get(`https://viper.devstackx.in/api/v1/insta?query=${args}`);
 for (let i of data.data.data) {
  await  m.sendMsg(m.jid, i.url,{ quoted: m }, i.type);
 }
