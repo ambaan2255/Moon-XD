@@ -12,24 +12,34 @@ const {
 cmd({
 		name: "sticker",
 		fromMe: isPublic,
-		category: "converter",
-		desc: "convert photo to sticker",
+		desc: "Converts an image to sticker",
+		category: "convert",
 	},
 	async ({
 		m,
+		client,
 		args
 	}) => {
-		if (!m.quoted || !(m.quoted.message.imageMessage || m.quoted.message.videoMessage)) {
-			return await m.reply("ʀᴇᴩʟᴀʏ ᴛᴏ ᴀ ᴩʜᴏᴛᴏ ᴏʀ ᴠɪᴅᴇᴏ");
+		if (!m.quoted || !(m.quoted.message.imageMessage || m.quoted.message.videoMessage || m.quoted.message.stickerMessage))
+			return await m.reply("Reply to photo or video");
+		if (args) {
+			let [packname, author] = args.split(",");
+			let buff = await m.quoted.download();
+			m.sendMsg(m.jid, buff, {
+				packname: packname || '',
+				author: author || '',
+				quoted: m
+			}, "sticker")
+		} else {
+			let buff = await m.quoted.download();
+			m.sendMsg(m.jid, buff, {
+				packname: '',
+				author: ' ',
+				quoted: m
+			}, "sticker")
 		}
-		await m.react('⏫');
-		await m.sendMsg(m.jid, await m.quoted.download(), {
-			packName: args.split(';')[0] || config.STICKER_DATA.split(';')[0],
-			authorName: args.split(';')[1] || config.STICKER_DATA.split(';')[1],
-			quoted: m
-		}, "sticker");
-		return await m.react('✅');
-	});
+	}
+);
 
 cmd({
 		name: "mp3",
