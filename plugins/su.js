@@ -54,7 +54,7 @@ cmd({
 		m,
 		args
 	}) => {
-		if (args?.startsWith("$")) {
+		if(args[0]===("$")) {
 			try {
 				let evaled = await eval(`(async () => { ${args.replace("$", "")} })()`);
 				if (typeof evaled !== "string") evaled = util.inspect(evaled);
