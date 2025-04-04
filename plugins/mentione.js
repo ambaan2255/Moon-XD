@@ -18,7 +18,7 @@ cmd({
         let img = ["https://cdn.ironman.my.id/q/zRfLV.jpg","https://cdn.ironman.my.id/q/xxBax.jpg","https://cdn.ironman.my.id/q/DhBxA.jpg","https://cdn.ironman.my.id/q/HElrw.jpg","https://cdn.ironman.my.id/q/etLJh.jpg",];
         const imgMsg = img[Math.floor(Math.random() * img.length)];
         let SUDO = "919497705819";
-if(SUDO.split(",").some((number) => args?.includes(number))) {
+if(SUDO.split(",").some((number) => args[0]===(number))) {
               const Audios = await (await fetch(songMsg)).buffer()
 await client.sendMessage(m.jid,{audio: Audios,mimetype: 'audio/mp4', ptt: false,
 contextInfo: 
