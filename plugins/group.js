@@ -160,3 +160,81 @@ cmd({
 		}
 
 	})
+cmd({
+	  name: "kick",
+	  fromMe: isPublic,
+	  desc: "Kick a user from the group",
+	  category: "group"
+},
+		async ({m, client, args}) => {
+			try {
+				if (!await m.isAdmin(client.user.id)) return m.reply("Admin access not conferred.")
+				if (!await m.isAdmin(m.sender)) return m.reply("Only for authorized administrators.")
+				if (!(args || m.quoted)) return m.reply("Mention a User")
+				if (args) {
+			    var user = args.replace("@", "") + '@s.whatsapp.net';
+				} else if (m.quoted.sender) {
+					var user = m.quoted.sender;
+				} else if (m.mentionedJid) {
+					var user = args + '@s.whatsapp.net';
+				}
+
+				await client.groupParticipantsUpdate(m.jid, [user], "remove");
+				m.sendMsg(m.jid, `@${user.split("@") [0]} kicked from the group.`, { 
+					mentions: [user],
+					quoted: m		
+				})
+			} catch (e) {
+			console.log(e);
+		}
+
+	})
+	  
+cmd({
+	  name: "add",
+	  fromMe: isPublic,
+	  desc: "Add a user to the group",
+	  category: "group"
+},
+		async ({m, client, args}) => {
+			try {
+				if (!await m.isAdmin(client.user.id)) return m.reply("Admin access not conferred.");
+				if (!await m.isAdmin(m.sender)) return m.reply("Only for authorized administrators.")
+				if (!(args || m.quoted)) return m.reply("Mention a user")
+				if (args) {
+					var user = args.replace("@", "") + '@s.whatsapp.net';
+				} else if (m.quoted.sender) {
+					var user = m.quoted.sender;
+				} else if (m.mentionedJid) {
+					var user = args + '@s.whatsapp.net';
+				}
+
+				await client.groupParticipantsUpdate(m.jid, [user],"add");
+				m.sendMsg(m.jid,`@${user.split("@")[0]} added to the group.`,{
+					mentions: [user],
+					quoted: m
+				})
+				} catch (e) {
+			console.log(e);
+		}
+
+	})
+
+cmd({
+	  name: "tagall",
+	  fromMe: isPublic,
+	  desc: "Tags all members in the group",
+	  category: "group"
+},
+		async ({m, client, match}) => {
+		if (!m.isGroup) return
+    const { participants } = await client.groupMetadata(m.jid);
+    let teks = "";
+    for (let mem of participants) {
+      teks += ` @${mem.id.split("@")[0]}\n`;
+    }
+    m.sendMsg(m.jid,teks,{
+      mentions: participants.map((a) => a.id),
+    });
+  }
+);	
