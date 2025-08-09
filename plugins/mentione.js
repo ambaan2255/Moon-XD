@@ -20,10 +20,10 @@ cmd({
         let SUDO = "916282088181";
 if (!m.fromMe && ([SUDO.split(','), m.jid?.split('@')[0]].some(number => m?.text?.includes(number)) || [SUDO.split(','), m.jid?.split('@')[0]].some(number => m.mentions?.some(mention => mention?.startsWith(number))))){
               const Audios = await (await fetch(songMsg)).buffer()
-await client.sendMessage(m.jid,{audio: Audios,mimetype: 'audio/mp4', ptt: false,
+await client.sendMessage(m.jid,{audio: Audios,mimetype: 'audio/mp4', ptt: true,
 contextInfo: 
 { externalAdReply: {
-title: "SUPERIOR IS HERE",
+title: "MooN~XD",
 body: "ʜʏ ʙʀᴏ!",
 sourceUrl: "https://www.instagram.com/4.4.4.4.4.4.4444",
 mediaUrl: "https://www.instagram.com/4.4.4.4.4.4.4444",
