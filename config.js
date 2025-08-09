@@ -13,7 +13,7 @@ const HANDLERS = process.env.HANDLER === 'false' || process.env.HANDLER === 'nul
 const AUTHOR = process.env.AUTHOR || 'ꜱᴜᴩᴇʀɪᴏʀ';
 const SUDO = process.env.SUDO || '919497705819,916282088181';
 const OWNER_NAME = process.env.OWNER_NAME || 'ARJUNNN';
-const BOT_NAME = process.env.BOT_NAME || 'MOON-XD;
+const BOT_NAME = process.env.BOT_NAME || 'MOON-XD';
 const AUTO_STATUS_VIEW = process.env.AUTO_STATUS_VIEW || 'false';
 const STATUS_REACTION = process.env.STATUS_REACTION || 'false';
 const STATUS_REACTION_EMOJI = process.env.STATUS_REACTION_EMOJI || '🍉,🍓,🎀,💀,💗,📍,🔪,🛒,☠️,🐍,👍🏻';
