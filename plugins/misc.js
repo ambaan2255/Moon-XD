@@ -30,14 +30,14 @@ cmd({
 		}) => {
 let img = "https://files.catbox.moe/hu1v4v.mp4"
 await client.sendMessage(m.jid,{audio: {url: img},mimetype: 'audio/mp4', ptt: true, contextInfo: { externalAdReply: {
-title: "Whatsapp-BOT IS ALIVE",
+title: "MOON-XD IS ALIVE",
 body: "ᴍᴀᴅᴇ ʙʏ ꜱᴜᴩᴇʀɪᴏʀ",
 sourceUrl: "https://www.instagram.com/4.4.4.4.4.4.4444",
 mediaUrl: "https://www.instagram.com/4.4.4.4.4.4.4444",
 mediaTypT,
 showAdAttribution: false,
 renderLargerThumbnail: true,
-thumbnailUrl: " https://files.catbox.moe/j9axvb.png" }} },{quoted: m}) });
+thumbnailUrl: " https://cdn.ironman.my.id/q/zRfLV.jpg" }} },{quoted: m}) });
 
 cmd({
 		name: "mee",
@@ -91,3 +91,14 @@ cmd({
 			edit: pong.key
 		})
 	});
+/*cmd({
+		name: "alive",
+		fromMe: isPublic,
+	},
+	async ({
+		m,
+		client,
+		args
+	}) => {
+		m.reply(m.jid, {text:`MOON-XD IS ALIVE`})
+	})*/
