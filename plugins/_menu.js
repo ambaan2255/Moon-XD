@@ -93,7 +93,7 @@ cmd({
 					});
 				});
 				//m.sendMsg(m.jid , img , { caption: font.tiny(menu) } , "image" )
-				let sperky = { "key": { "participants":"0@s.whatsapp.net", "remoteJid": "status@broadcast", "fromMe": false, "id": "Hallo" }, "message": { "contactMessage": { "displayName": "MOON-XD","vcard": `BEGIN:VCARD\nVERSION:3.0\nN:Sy;Bot;;;\nFN:y\nitem1.TEL;waid=${m.sender.split('@')[0]}:${m.sender.split('@')[0]}\nitem1.X-ABLabel:Ponsel\nEND:VCARD` }}, "participant": "0@s.whatsapp.net" }
+				/*let sperky = { "key": { "participants":"0@s.whatsapp.net", "remoteJid": "status@broadcast", "fromMe": false, "id": "Hallo" }, "message": { "contactMessage": { "displayName": "MOON-XD","vcard": `BEGIN:VCARD\nVERSION:3.0\nN:Sy;Bot;;;\nFN:y\nitem1.TEL;waid=${m.sender.split('@')[0]}:${m.sender.split('@')[0]}\nitem1.X-ABLabel:Ponsel\nEND:VCARD` }}, "participant": "0@s.whatsapp.net" }
         return await client.sendMessage(m.jid ,{document: { url: 'https://i.ibb.co/2W0H9Jq/avatar-contact.png'
 				}, text : font.tiny(menu),	mimetype: 'application/zip',
          fileName: BOT_NAME.split(";")[0],
@@ -107,7 +107,7 @@ mediaUrl: URL,
 mediaType: 2,
 showAdAttribution: true,
 renderLargerThumbnail: true,
-thumbnailUrl: `${MENU_URL}` }}},{ quoted: sperky })
+thumbnailUrl: `${MENU_URL}` }}},{ quoted: sperky })*/
             // let text = align(txt, centerAlign);
         /*return await client.sendMessage(m.jid , { text : `${menu}` , contextInfo: { externalAdReply: { title: font.tiny(`Hey there  ${m.pushName}`), sourceUrl: "ʜᴇᴍ", mediaUrl: "https://instagram.com/_viper.x0_", mediaType: 1, showAdAttribution: false, renderLargerThumbnail: true, thumbnailUrl: "https://i.imgur.io/3T1zSxj_d.webp?maxwidth=640&shape=thumb&fidelity=medium" }} }, {quoted: m })*/
           m.send(m.jid , font.tiny(menu))
