@@ -19,7 +19,7 @@ cmd({
 	}) => {
 		m.reply(`${m.jid}`)
 	})
-cmd({
+/*cmd({
 	name: "alive",
 	fromMe: isPublic,
 	},
@@ -37,7 +37,7 @@ mediaUrl: "https://www.instagram.com/4.4.4.4.4.4.4444",
 mediaTypT,
 showAdAttribution: false,
 renderLargerThumbnail: true,
-thumbnailUrl: " https://cdn.ironman.my.id/q/zRfLV.jpg" }} },{quoted: m}) });
+thumbnailUrl: " https://cdn.ironman.my.id/q/zRfLV.jpg" }} },{quoted: m}) });*/
 
 cmd({
 		name: "mee",
@@ -91,7 +91,7 @@ cmd({
 			edit: pong.key
 		})
 	});
-/*cmd({
+cmd({
 		name: "alive",
 		fromMe: isPublic,
 	},
@@ -100,5 +100,7 @@ cmd({
 		client,
 		args
 	}) => {
-		m.reply(m.jid, {text:`MOON-XD IS ALIVE`})
-	})*/
+		let nova = await client.sendMessage (m.jid,{text:`MOON-XD IS ALIVE`})
+		let img = "https://files.catbox.moe/hu1v4v.mp4"
+await client.sendMessage(nova,{audio: {url: img},mimetype: 'audio/mp4', ptt: true}),{quoted.m}
+	})
