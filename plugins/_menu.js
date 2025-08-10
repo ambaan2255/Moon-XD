@@ -110,7 +110,7 @@ renderLargerThumbnail: true,
 thumbnailUrl: `${MENU_URL}` }}},{ quoted: sperky })*/
             // let text = align(txt, centerAlign);
         /*return await client.sendMessage(m.jid , { text : `${menu}` , contextInfo: { externalAdReply: { title: font.tiny(`Hey there  ${m.pushName}`), sourceUrl: "ʜᴇᴍ", mediaUrl: "https://instagram.com/_viper.x0_", mediaType: 1, showAdAttribution: false, renderLargerThumbnail: true, thumbnailUrl: "https://i.imgur.io/3T1zSxj_d.webp?maxwidth=640&shape=thumb&fidelity=medium" }} }, {quoted: m })*/
-          m.send(m.jid , font.tiny(menu))
+          m.send(font.tiny(menu))
         }
       } catch (e) {
         m.error(`hey : ${e}`)
