@@ -8,7 +8,8 @@ const {
 	OWNER_NAME,
 	BOT_NAME,
 	MENU_URL,
-	HANDLERS
+	HANDLERS,
+	WORK_TYPE
 } = require("../config.js");
 const font = require("@viper-x/fancytext");
 const fs = require("fs");
