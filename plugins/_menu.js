@@ -42,7 +42,14 @@ cmd({
 						timeZone: "Asia/Kolkata"
 					})
 					.split(",");
-				let menu = `\n   WhatsApp Bot\n\n${readMore}`
+				let menu = `\n   WhatsApp Bot\n${readMore}\n
+╭───────────┈⊷
+╠» Name : ${BOT_NAME}
+╠» Owner : ${OWNER_NAME}
+╠» mode :${WORK_TYPE}
+╠» Date : ${date}
+╠» Time : ${time}
+╰───────────┈⊷\n\n${readMore}`
 				let cmnd = [];
 				let cmd;
 				let type = [];
@@ -73,7 +80,7 @@ cmd({
 				});
 				cmnd.sort();
 				type.sort().forEach((cmmd) => {
-					menu += `\n 🍁 *${cmmd}*\n\n`
+					menu += `╭───────────┈⊷\n │═ ⪼ *${cmmd}*\n╰───────────┈⊷\n`;
 					let comad = cmnd.filter(({
 						category
 					}) => category == cmmd)
@@ -81,7 +88,7 @@ cmd({
 					comad.forEach(({
 						cmd
 					}, num) => {
-						menu += `  ➪ ${cmd}\n`
+						menu += `   ➪  ${cmd}\n`
 					});
 				});
 				//m.sendMsg(m.jid , img , { caption: font.tiny(menu) } , "image" )
