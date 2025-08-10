@@ -102,5 +102,5 @@ cmd({
 	}) => {
 		let nova = await client.sendMessage (m.jid,{text:`MOON-XD IS ALIVE`})
 		let img = "https://files.catbox.moe/hu1v4v.mp4"
-await client.sendMessage(nova,{audio: {url: img},mimetype: 'audio/mp4', ptt: true}),{quoted.m}
+await client.sendMessage(nova,{audio: {url: img},mimetype: 'audio/mp4', ptt: true}),{quoted:m}
 	})
